@@ -34,7 +34,8 @@ public class Checker extends Thread {
 
 		for (Host host : hosts) {
 			for (String endpoint : host.getEndpoints()) {
-				Checker thread = new Checker(host.id, new URL("http://" + endpoint));
+
+				Checker thread = new Checker(host.id, new URL(endpoint));
 				thread.start();
 			}
 		}
